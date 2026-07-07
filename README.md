@@ -1,71 +1,71 @@
 # FPGA VGA Game
 
-FPGA 기반 VGA 게임 프로젝트입니다.
+FPGA-based VGA game implemented in Verilog HDL.
 
-Verilog HDL을 사용하여 VGA 출력, FSM(Finite State Machine), PS/2 키보드 입력, LFSR 기반 랜덤 생성 및 충돌 판정을 구현했습니다.
+This project was developed as part of an undergraduate Digital Circuit Design course. It implements a simple arcade-style game featuring VGA graphics, FSM-based game control, PS/2 keyboard input, collision detection, and LFSR-based random obstacle generation.
 
 ---
 
 ## 📌 Project Overview
 
-This project is a VGA-based arcade game implemented using Verilog HDL on an FPGA platform.
+The project focuses on implementing digital hardware using Verilog HDL, from RTL design to FPGA verification.
 
-The project was developed during a digital circuit design course to practice RTL design, FSM implementation, VGA display control, keyboard input processing, collision detection, and hardware debugging.
+Key components include VGA display control, finite state machine (FSM) design, keyboard input processing, random obstacle generation, collision detection, and multi-stage game control.
 
 ---
 
-## 👨‍💻 My Role
+## 👨‍💻 My Contributions
 
-- Designed FSM-based game logic
-- Implemented RTL for game state control
-- Analyzed Waveforms to identify state transition issues
+- Designed the overall FSM architecture
+- Implemented RTL for game control logic
+- Analyzed simulation waveforms to identify state transition issues
 - Redesigned the State Register and Next-State Logic
-- Developed Testbench for repeated verification
-- Verified functionality on FPGA hardware
+- Developed testbenches for functional verification
+- Verified the design through simulation and FPGA hardware testing
 
 ---
 
-## 🛠️ Skills
+## 🛠️ Tech Stack
 
 - Verilog HDL
 - FPGA
 - RTL Design
-- FSM
+- Finite State Machine (FSM)
 - VGA Controller
-- PS/2 Keyboard
-- ModelSim
+- PS/2 Keyboard Interface
 - Quartus Prime
+- ModelSim
 
 ---
 
-## 🎮 Main Features
+## 🎮 Features
 
-- VGA display output
-- FSM-based game flow
-- PS/2 keyboard control
+- VGA graphics output
+- FSM-based game control
+- PS/2 keyboard input
 - LFSR-based random obstacle generation
 - Bounding box collision detection
-- Multi-stage game progression
+- Multi-stage gameplay
 
 ---
 
 ## 🔍 Problem Solving
 
-During development, multiple game states shared the same coordinate register, causing previous position data to remain after state transitions.
+During development, multiple game states unintentionally shared the same coordinate register, causing position data to remain after state transitions.
 
-By analyzing simulation waveforms, I found that the input paths inside the Next-State Logic were not properly separated.
+Waveform analysis showed that the data paths in the Next-State Logic were not properly separated.
 
-To solve the issue, I redesigned the FSM by separating the State Register and Next-State Logic, and assigned independent registers for each game state.
+To resolve the issue, I redesigned the FSM by separating the State Register from the Next-State Logic and assigning independent registers to each game state.
 
-The redesigned logic was verified through Testbench simulation and FPGA hardware testing.
+The updated design was verified through repeated ModelSim simulations and FPGA hardware testing.
 
 ---
 
 ## 📚 What I Learned
 
-Through this project, I learned how to analyze digital systems by tracking signal flow and debugging waveforms rather than simply modifying code.
+This project gave me hands-on experience in RTL design, FSM implementation, waveform analysis, and FPGA verification.
 
-It also helped me better understand FSM design, RTL verification, and hardware-oriented problem solving.
+More importantly, I learned to identify design issues by tracing signal flow and verifying hardware behavior instead of relying on trial-and-error code changes.
 
 ---
 
@@ -73,4 +73,4 @@ It also helped me better understand FSM design, RTL verification, and hardware-o
 
 This repository contains the remaining source code from an undergraduate FPGA project.
 
-Some source files and the original development environment were not preserved after the project was completed. The repository has therefore been organized using the remaining source code and project documentation.
+Some dependent modules and the original development environment were not preserved after the project was completed. The repository has been organized using the remaining source code and documentation.
