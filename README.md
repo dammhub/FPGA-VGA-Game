@@ -1,21 +1,27 @@
 # FPGA VGA Game
 
+FPGA 기반 VGA 게임 프로젝트입니다.
+
+Verilog HDL을 사용하여 VGA 출력, FSM(Finite State Machine), PS/2 키보드 입력, LFSR 기반 랜덤 생성 및 충돌 판정을 구현했습니다.
+
+---
+
 ## 📌 Project Overview
 
-This project is a VGA-based arcade game implemented using **Verilog HDL** on an FPGA platform.
+This project is a VGA-based arcade game implemented using Verilog HDL on an FPGA platform.
 
-The game was developed as part of a digital circuit design course to gain practical experience in RTL design, finite state machine (FSM) implementation, VGA display control, keyboard input processing, collision detection, and hardware debugging.
+The project was developed during a digital circuit design course to practice RTL design, FSM implementation, VGA display control, keyboard input processing, collision detection, and hardware debugging.
 
 ---
 
 ## 👨‍💻 My Role
 
-- Designed and verified FSM-based game logic
+- Designed FSM-based game logic
 - Implemented RTL for game state control
 - Analyzed Waveforms to identify state transition issues
-- Redesigned the state register and Next-State Logic
-- Created Testbench for repeated verification
-- Verified operation on FPGA hardware
+- Redesigned the State Register and Next-State Logic
+- Developed Testbench for repeated verification
+- Verified functionality on FPGA hardware
 
 ---
 
@@ -24,7 +30,7 @@ The game was developed as part of a digital circuit design course to gain practi
 - Verilog HDL
 - FPGA
 - RTL Design
-- FSM (Finite State Machine)
+- FSM
 - VGA Controller
 - PS/2 Keyboard
 - ModelSim
@@ -37,8 +43,8 @@ The game was developed as part of a digital circuit design course to gain practi
 - VGA display output
 - FSM-based game flow
 - PS/2 keyboard control
-- Random obstacle generation using LFSR
-- Collision detection
+- LFSR-based random obstacle generation
+- Bounding box collision detection
 - Multi-stage game progression
 
 ---
@@ -47,19 +53,19 @@ The game was developed as part of a digital circuit design course to gain practi
 
 During development, multiple game states shared the same coordinate register, causing previous position data to remain after state transitions.
 
-I analyzed the waveform and found that the input paths inside the Next-State Logic were not properly separated.
+By analyzing simulation waveforms, I found that the input paths inside the Next-State Logic were not properly separated.
 
-To solve this problem, I redesigned the FSM by separating the State Register and Next-State Logic and assigned independent registers for each game mode.
+To solve the issue, I redesigned the FSM by separating the State Register and Next-State Logic, and assigned independent registers for each game state.
 
-After the redesign, I verified the behavior through simulation using Testbench and confirmed the operation on the FPGA board.
+The redesigned logic was verified through Testbench simulation and FPGA hardware testing.
 
 ---
 
 ## 📚 What I Learned
 
-This project helped me understand how to analyze digital systems rather than simply modifying code.
+Through this project, I learned how to analyze digital systems by tracking signal flow and debugging waveforms rather than simply modifying code.
 
-Through waveform debugging, RTL verification, and FSM redesign, I learned how hardware architecture directly affects system stability and performance.
+It also helped me better understand FSM design, RTL verification, and hardware-oriented problem solving.
 
 ---
 
@@ -67,6 +73,4 @@ Through waveform debugging, RTL verification, and FSM redesign, I learned how ha
 
 This repository contains the remaining source code from an undergraduate FPGA project.
 
-Because the project was completed several years ago, some source files and the original development environment were no longer available.
-
-The repository has been organized using the remaining source code and project documentation.
+Some source files and the original development environment were not preserved after the project was completed. The repository has therefore been organized using the remaining source code and project documentation.
